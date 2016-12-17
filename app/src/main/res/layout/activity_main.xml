@@ -19,20 +19,12 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:onClick="onDownload"
-        android:text="@string/DL_JSON"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_welcome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/Download" />
+        android:onClick="launchHexaFromColor"
 
-    <Button
         android:text="@string/HexaFromColor"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Download"
+        android:layout_below="@+id/tv_welcome"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:id="@+id/hexa_from_color" />

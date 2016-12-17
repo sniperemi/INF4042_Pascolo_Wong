@@ -1,11 +1,18 @@
 <resources>
-    <string name="app_name">Mobile Programming</string>
+    <string name="app_name">Color Converter</string>
+
     <string name="tv_welcome">Welcome !</string>
-    <string name="DL_JSON">Download colors</string>
+
+    <string name="DL_JSON">Download Advanced Pack 1</string>
     <string name="colorPack">Color Pack</string>
     <string name="downloadToast">Download launched...</string>
     <string name="downloading">Downloading...</string>
+
+    <string name="SelectColor">Colors from Database</string>
+    <string name="ColorFromPicture">Take a picture</string>
+
     <string name="HexaFromColor">Hexa from color</string>
+
     <string name="RGBFromColor">RGB from color</string>
     <string name="ColorFromHexa">Color from Hexa</string>
     <string name="ColorFromRGB">Color from RGB</string>

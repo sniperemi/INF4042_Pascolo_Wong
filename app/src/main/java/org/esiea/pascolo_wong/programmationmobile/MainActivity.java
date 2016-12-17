@@ -2,13 +2,17 @@ package org.esiea.pascolo_wong.programmationmobile;
 
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,24 +25,17 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));*/
     }
 
-    /*public void showToast(View v)
-    {
-        Toast.makeText(getApplicationContext(),getString(R.string.msg), Toast.LENGTH_SHORT).show();
-    }*/
-
-    public void onDownload (View v)
-    {
-        Toast.makeText(getApplicationContext(),getString(R.string.downloadToast), Toast.LENGTH_SHORT).show();
-        downloadNotification();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
     }
 
-    private void downloadNotification ()
+    public void launchHexaFromColor(View v)
     {
-        NotificationCompat.Builder notifBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.download)
-                .setContentTitle(getString(R.string.colorPack))
-                .setContentText(getString(R.string.downloading));
-        NotificationManager notifMnger = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notifMnger.notify(0, notifBuilder.build());
+        Intent i = new Intent(this, activity_hexa_from_color.class);
+        startActivity(i);
     }
+
 }
