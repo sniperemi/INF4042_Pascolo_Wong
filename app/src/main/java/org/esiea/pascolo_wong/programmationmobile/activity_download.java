@@ -2,6 +2,7 @@ package org.esiea.pascolo_wong.programmationmobile;
 
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
@@ -39,5 +40,13 @@ public class activity_download extends AppCompatActivity {
                 .setContentText(getString(R.string.downloading));
         NotificationManager notifMnger = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notifMnger.notify(0, notifBuilder.build());
+    }
+
+    private void downloadJSONFile()
+    {
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.package.address");
+        if (launchIntent != null) {
+            startActivity(launchIntent);//null pointer check in case package name was not found
+        }
     }
 }
