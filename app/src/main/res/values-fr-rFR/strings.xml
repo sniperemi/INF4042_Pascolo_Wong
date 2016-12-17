@@ -3,7 +3,9 @@
     <string name="app_name">Programmation Mobile</string>
     <string name="tv_welcome">Bienvenue !</string>
     <string name="DL_JSON">Télécharger des couleurs</string>
+    <string name="colorPack">Pack de couleurs</string>
     <string name="downloadToast">Téléchargement lancé...</string>
+    <string name="downloading">Téléchargement en cours...</string>
     <string name="HexaFromColor">Hexa depuis une couleur</string>
     <string name="RGBFromColor">RGB depuis une couleur</string>
     <string name="ColorFromHexa">Couleur depuis Hexa</string>
