@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Programmation Mobile</string>
+    <string name="tv_welcome">Bienvenue !</string>
+    <string name="DL_JSON">Télécharger des couleurs</string>
+    <string name="downloadToast">Téléchargement lancé...</string>
+    <string name="HexaFromColor">Hexa depuis une couleur</string>
+    <string name="RGBFromColor">RGB depuis une couleur</string>
+    <string name="ColorFromHexa">Couleur depuis Hexa</string>
+    <string name="ColorFromRGB">Couleur depuis RGB</string>
+    <string name="HexaFromRGB">Hexa depuis RGB</string>
+    <string name="RGBFromHexa">RGB depuis Hexa</string>
+</resources>

@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Programmation mobile</string>
+    <string name="app_name">Mobile Programming</string>
+    <string name="tv_welcome">Welcome !</string>
+    <string name="DL_JSON">Download colors</string>
+    <string name="downloadToast">Download launched...</string>
+    <string name="HexaFromColor">Hexa from color</string>
+    <string name="RGBFromColor">RGB from color</string>
+    <string name="ColorFromHexa">Color from Hexa</string>
+    <string name="ColorFromRGB">Color from RGB</string>
+    <string name="HexaFromRGB">Hexa from RGB</string>
+    <string name="RGBFromHexa">RGB from Hexa</string>
+    <string name="msg">PLOP</string>
 </resources>
