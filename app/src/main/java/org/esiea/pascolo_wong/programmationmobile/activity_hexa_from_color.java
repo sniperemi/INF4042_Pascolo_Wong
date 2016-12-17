@@ -14,6 +14,12 @@ public class activity_hexa_from_color extends AppCompatActivity {
         setContentView(R.layout.activity_hexa_from_color);
     }
 
+    public void getDatabase(View v)
+    {
+        Intent i = new Intent(this, activity_hexa_from_color_db.class);
+        startActivity(i);
+    }
+
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
     public void takePicture(View v)

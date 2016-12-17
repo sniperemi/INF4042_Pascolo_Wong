@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.esiea.pascolo_wong.programmationmobile">
-    <uses-feature android:name="android.hardware.camera"
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="false" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +22,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity_download" />
-        <activity android:name=".activity_hexa_from_color"></activity>
+        <activity android:name=".activity_hexa_from_color" />
+
+        <service
+            android:name=".DownloadIntent"
+            android:exported="false" />
+
+        <activity android:name=".activity_hexa_from_color_db"></activity>
     </application>
 
 </manifest>
