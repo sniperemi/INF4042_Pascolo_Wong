@@ -12,12 +12,17 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.json.JSONException;
 
 import java.io.FileInputStream;
@@ -38,6 +43,60 @@ public class activity_hexa_from_color_db extends AppCompatActivity {
             //Log.d("FinishedDL", getIntent().getAction());
         }
     }
+
+    public class ColorsAdapter extends RecyclerView.Adapter<ColorsAdapter.ColorHolder>
+    {
+        private JSONArray colors = null;
+        public class ColorHolder extends RecyclerView.ViewHolder
+        {
+            public View name;
+            public ColorHolder(View itemView) {
+                super(itemView);
+                name = itemView;
+            }
+
+        }
+
+        public ColorsAdapter(JSONArray jsonArray)
+        {
+            colors = jsonArray;
+        }
+
+        @Override
+        public ColorsAdapter.ColorHolder onCreateViewHolder(ViewGroup parent,
+                                                       int viewType) {
+            // create a new view
+            View v = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.rv_color_element, parent, false);
+            // set the view's size, margins, paddings and layout parameters
+            ColorHolder colorH = new ColorHolder(v);
+            return colorH;
+        }
+
+        @Override
+        public void onBindViewHolder(ColorHolder holder, int position) {
+            // - get element from your dataset at this position
+            // - replace the contents of the view with that element
+            //holder.itemView..setText(mDataset[position]);
+            JSONObject jsonObject = null;
+            try
+            {
+                jsonObject = colors.getJSONObject(position);
+            }
+            catch (JSONException e)
+            {
+                e.printStackTrace();
+            }
+            //holder.name.setText(jsonObject);
+        }
+
+        @Override
+        public int getItemCount() {
+            return colors.length();
+        }
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +182,9 @@ public class activity_hexa_from_color_db extends AppCompatActivity {
     {
         RecyclerView rv = (RecyclerView) findViewById(R.id.rv_colors);
         rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        ColorsAdapter colorsAdapter = new ColorsAdapter(getColorsFromFile());
+        rv.setAdapter(colorsAdapter);
     }
 }
 
