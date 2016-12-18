@@ -72,7 +72,7 @@ public class DownloadService extends IntentService {
     private void downloadFinishedNotification ()
     {
         NotificationCompat.Builder notifBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.downloadFinished)
+                .setSmallIcon(R.drawable.downloadfinished)
                 .setContentTitle(getString(R.string.colorPack))
                 .setContentText(getString(R.string.downloadFinished));
         NotificationManager notifMnger = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
