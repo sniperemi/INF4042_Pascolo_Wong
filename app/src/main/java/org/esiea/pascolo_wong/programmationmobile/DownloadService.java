@@ -1,8 +1,11 @@
 package org.esiea.pascolo_wong.programmationmobile;
 
 import android.app.IntentService;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.Context;
+import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 
 import java.io.File;
@@ -50,7 +53,9 @@ public class DownloadService extends IntentService {
             connexion.connect();
             if(HttpURLConnection.HTTP_OK == connexion.getResponseCode())
             {
+                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(activity_hexa_from_color_db.COLORS_UPDATE));
                 copyInputStreamToFile(connexion.getInputStream(), new File(getCacheDir(), "advancedColorPack1.json"));
+                downloadFinishedNotification();
                 Log.d("Download", "Colors downloaded");
             }
         }
@@ -62,6 +67,16 @@ public class DownloadService extends IntentService {
         {
             e.printStackTrace();
         }
+    }
+
+    private void downloadFinishedNotification ()
+    {
+        NotificationCompat.Builder notifBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.downloadFinished)
+                .setContentTitle(getString(R.string.colorPack))
+                .setContentText(getString(R.string.downloadFinished));
+        NotificationManager notifMnger = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notifMnger.notify(0, notifBuilder.build());
     }
 
     private void copyInputStreamToFile(InputStream input, File file)

@@ -46,9 +46,7 @@ public class activity_download extends AppCompatActivity {
     private void downloadJSONFile()
     {
         DownloadService.startActionGetColors(this);
-        /*Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.package.address");
-        if (launchIntent != null) {
-            startActivity(launchIntent);//null pointer check in case package name was not found
-        }*/
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 }

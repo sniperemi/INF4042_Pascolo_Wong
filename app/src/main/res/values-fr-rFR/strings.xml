@@ -8,6 +8,7 @@
     <string name="colorPack">Pack de couleurs</string>
     <string name="downloadToast">Téléchargement lancé...</string>
     <string name="downloading">Téléchargement en cours...</string>
+    <string name="downloadFinished">Téléchargement terminé</string>
 
     <string name="SelectColor">Couleurs de la Base de Données</string>
     <string name="ColorFromPicture">Prendre une Photo</string>
