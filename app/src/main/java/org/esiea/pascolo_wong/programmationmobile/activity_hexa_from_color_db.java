@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StreamCorruptedException;
 
+import static android.R.attr.name;
+
 public class activity_hexa_from_color_db extends AppCompatActivity {
 
     public static final String COLORS_UPDATE = "org.esiea.pascolo_wong.programmationmobile.COLORS_UPDATE";
@@ -87,7 +89,14 @@ public class activity_hexa_from_color_db extends AppCompatActivity {
             {
                 e.printStackTrace();
             }
-            //holder.name.setText(jsonObject);
+            /*TextView tv = (TextView)findViewById(R.id.rv_color_element_name);
+            tv.setText("Plop");*/
+            /*if ( instanceof TextView)
+            {
+                TextView nameTV = (TextView) name;
+            }*/
+            //holder.(TextView)name.
+            //holder.name.setText("Plop");
         }
 
         @Override
