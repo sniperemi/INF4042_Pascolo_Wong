@@ -5,14 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_welcome"
-        android:id="@+id/tv_welcome"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
+    <!--
     <Button
         android:onClick="onDownload"
         android:text="@string/DL_JSON"
@@ -22,59 +15,77 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:id="@+id/Download" />
-
-    <Button
-        android:text="@string/HexaFromColor"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Download"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/hexa_from_color" />
+    -->
 
     <Button
         android:text="@string/RGBFromColor"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hexa_from_color"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:id="@+id/rgb_from_color" />
+        android:id="@+id/rgb_from_color"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/tv_welcome"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="50dp" />
+
+    <Button
+        android:onClick="launchHexaFromColor"
+
+
+        android:text="@string/HexaFromColor"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/hexa_from_color"
+        android:layout_above="@+id/color_from_hexa"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="50dp" />
 
     <Button
         android:text="@string/ColorFromHexa"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:id="@+id/color_from_hexa"
         android:layout_below="@+id/rgb_from_color"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:id="@+id/color_from_hexa" />
+        android:layout_alignLeft="@+id/hexa_from_color"
+        android:layout_alignStart="@+id/hexa_from_color" />
 
     <Button
         android:text="@string/ColorFromRGB"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/color_from_hexa"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:id="@+id/color_from_rgb" />
-
-    <Button
-        android:text="@string/HexaFromRGB"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/color_from_rgb"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:id="@+id/hexa_from_rgb" />
+        android:id="@+id/color_from_rgb"
+        android:layout_below="@+id/rgb_from_color"
+        android:layout_alignLeft="@+id/rgb_from_color"
+        android:layout_alignStart="@+id/rgb_from_color" />
 
     <Button
         android:text="@string/RGBFromHexa"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hexa_from_rgb"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="2dp"
-        android:id="@+id/rgb_from_hexa" />
+        android:id="@+id/rgb_from_hexa"
+        android:layout_below="@+id/color_from_rgb"
+        android:layout_alignLeft="@+id/color_from_rgb"
+        android:layout_alignStart="@+id/color_from_rgb" />
+
+    <Button
+        android:text="@string/HexaFromRGB"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/hexa_from_rgb"
+        android:layout_below="@+id/color_from_hexa"
+        android:layout_alignLeft="@+id/color_from_hexa"
+        android:layout_alignStart="@+id/color_from_hexa" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_welcome"
+        android:id="@+id/tv_welcome"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
