@@ -11,31 +11,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONException;
 
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 
 import java.io.InputStream;
-import java.io.StreamCorruptedException;
 
-import static android.R.attr.name;
-
-public class activity_hexa_from_color_db extends AppCompatActivity {
-
+public class activity_hexa_from_color_db extends AppCompatActivity
+{
+    private RecyclerView rv;
+    private ColorAdapter adapter;
     public static final String COLORS_UPDATE = "org.esiea.pascolo_wong.programmationmobile.COLORS_UPDATE";
     public class ColorsUpdate extends BroadcastReceiver
     {
@@ -46,76 +42,24 @@ public class activity_hexa_from_color_db extends AppCompatActivity {
         }
     }
 
-    public class ColorsAdapter extends RecyclerView.Adapter<ColorsAdapter.ColorHolder>
-    {
-        private JSONArray colors = null;
-        public class ColorHolder extends RecyclerView.ViewHolder
-        {
-            public View name;
-            public ColorHolder(View itemView) {
-                super(itemView);
-                name = itemView;
-            }
-
-        }
-
-        public ColorsAdapter(JSONArray jsonArray)
-        {
-            colors = jsonArray;
-        }
-
-        @Override
-        public ColorsAdapter.ColorHolder onCreateViewHolder(ViewGroup parent,
-                                                       int viewType) {
-            // create a new view
-            View v = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.rv_color_element, parent, false);
-            // set the view's size, margins, paddings and layout parameters
-            ColorHolder colorH = new ColorHolder(v);
-            return colorH;
-        }
-
-        @Override
-        public void onBindViewHolder(ColorHolder holder, int position) {
-            // - get element from your dataset at this position
-            // - replace the contents of the view with that element
-            //holder.itemView..setText(mDataset[position]);
-            JSONObject jsonObject = null;
-            try
-            {
-                jsonObject = colors.getJSONObject(position);
-            }
-            catch (JSONException e)
-            {
-                e.printStackTrace();
-            }
-            /*TextView tv = (TextView)findViewById(R.id.rv_color_element_name);
-            tv.setText("Plop");*/
-            /*if ( instanceof TextView)
-            {
-                TextView nameTV = (TextView) name;
-            }*/
-            //holder.(TextView)name.
-            //holder.name.setText("Plop");
-        }
-
-        @Override
-        public int getItemCount() {
-            return colors.length();
-        }
-    }
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hexa_from_color_db);
-        getColorsFromFile();
-        showColors();
+
+        rv = (RecyclerView) findViewById(R.id.rv_colors_list);
+
+        rv.setLayoutManager(new LinearLayoutManager(this));
+
+        adapter = new ColorAdapter(this, getColorsFromFile());
+        rv.setAdapter(adapter);
+
+        //rv.setLayoutManager(new LinearLayoutManager(this.getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+
         IntentFilter intentFilter = new IntentFilter(COLORS_UPDATE);
         LocalBroadcastManager.getInstance(this).registerReceiver(new ColorsUpdate(), intentFilter);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -185,15 +129,6 @@ public class activity_hexa_from_color_db extends AppCompatActivity {
     {
         Intent i = new Intent(this, activity_download.class);
         startActivity(i);
-    }
-
-    private void showColors()
-    {
-        RecyclerView rv = (RecyclerView) findViewById(R.id.rv_colors);
-        rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-        ColorsAdapter colorsAdapter = new ColorsAdapter(getColorsFromFile());
-        rv.setAdapter(colorsAdapter);
     }
 }
 

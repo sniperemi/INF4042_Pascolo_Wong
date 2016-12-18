@@ -21,9 +21,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*TextView tv_helloworld = (TextView)findViewById(R.id.tv_welcome);
-        RecyclerView rv = (RecyclerView) findViewById(R.id.rv_list);
-        rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));*/
     }
 
     @Override

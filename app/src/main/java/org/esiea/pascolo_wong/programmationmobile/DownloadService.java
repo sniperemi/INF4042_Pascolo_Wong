@@ -48,6 +48,7 @@ public class DownloadService extends IntentService {
         try
         {
             url = new URL("https://gist.githubusercontent.com/jjdelc/1868136/raw/c9160b1e60bd8c10c03dbd1a61b704a8e977c46b/crayola.json");
+            //url = new URL("http://binouze.fabrigli.fr/bieres.json");
             HttpURLConnection connexion = (HttpURLConnection) url.openConnection();
             connexion.setRequestMethod("GET");
             connexion.connect();
