@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -44,6 +47,33 @@ public class activity_hexa_from_color_db extends AppCompatActivity {
         showColors();
         IntentFilter intentFilter = new IntentFilter(COLORS_UPDATE);
         LocalBroadcastManager.getInstance(this).registerReceiver(new ColorsUpdate(), intentFilter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                // User chose the "Settings" item, show the app settings UI...
+                return true;
+
+            case R.id.action_home:
+                Intent i = new Intent(this, MainActivity.class);
+                startActivity(i);
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     public JSONArray getColorsFromFile()
