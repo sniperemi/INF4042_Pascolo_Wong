@@ -25,7 +25,7 @@
         <activity android:name=".activity_hexa_from_color" />
 
         <service
-            android:name=".DownloadIntent"
+            android:name=".DownloadService"
             android:exported="false" />
 
         <activity android:name=".activity_hexa_from_color_db"></activity>

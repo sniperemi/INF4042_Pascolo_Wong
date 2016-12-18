@@ -30,6 +30,7 @@ public class activity_download extends AppCompatActivity {
     {
         Toast.makeText(getApplicationContext(),getString(R.string.downloadToast), Toast.LENGTH_SHORT).show();
         downloadNotification();
+        downloadJSONFile();
     }
 
     private void downloadNotification ()
