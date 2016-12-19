@@ -42,6 +42,8 @@
 
 
     <Button
+        android:onClick="launchHexaFromRGB"
+
         android:text="@string/HexaFromRGB"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -51,6 +53,8 @@
         android:id="@+id/hexa_from_rgb" />
 
     <Button
+        android:onClick="launchRGBFromHexa"
+
         android:text="@string/RGBFromHexa"
         android:layout_width="300dp"
         android:layout_height="wrap_content"

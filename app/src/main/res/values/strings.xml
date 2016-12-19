@@ -24,6 +24,8 @@
     <string name="apply">Apply</string>
 
     <string name="HexaFromRGB">Hexa from RGB</string>
+    <string name="enterValidRGB">Enter valid RGB values</string>
+
     <string name="RGBFromHexa">RGB from Hexa</string>
 
     <string name="Help">Help</string>

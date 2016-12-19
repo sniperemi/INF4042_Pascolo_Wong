@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -70,7 +69,8 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorHolder>
         private TextView hexaCode;
         //private TextView rgbCode;
 
-        public ColorHolder(View itemView) {
+        public ColorHolder(View itemView)
+        {
             super(itemView);
             name = (TextView)itemView.findViewById(R.id.rv_color_element_name);
             hexaCode = (TextView)itemView.findViewById(R.id.rv_color_element_hexa);

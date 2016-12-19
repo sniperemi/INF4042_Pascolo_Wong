@@ -29,7 +29,9 @@
             android:exported="false" />
 
         <activity android:name=".activity_hexa_from_color_db" />
-        <activity android:name=".activity_color_from_hexa"></activity>
+        <activity android:name=".activity_color_from_hexa" />
+        <activity android:name=".activity_hexa_from_rgb" />
+        <activity android:name=".activity_rgb_from_hexa"></activity>
     </application>
 
 </manifest>

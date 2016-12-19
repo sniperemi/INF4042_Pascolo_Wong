@@ -23,6 +23,8 @@
     <string name="apply">Appliquer</string>
 
     <string name="HexaFromRGB">Hexa depuis RGB</string>
+    <string name="enterValidRGB">Entrez des valeurs RGB valides</string>
+
     <string name="RGBFromHexa">RGB depuis Hexa</string>
 
     <string name="Help">Aide</string>

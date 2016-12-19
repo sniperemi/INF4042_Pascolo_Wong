@@ -1,18 +1,12 @@
 package org.esiea.pascolo_wong.programmationmobile;
 
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -64,4 +58,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void launchHexaFromRGB(View v)
+    {
+        Intent i = new Intent(this, activity_hexa_from_rgb.class);
+        startActivity(i);
+    }
+
+    public void launchRGBFromHexa(View v)
+    {
+        Intent i = new Intent(this, activity_rgb_from_hexa.class);
+        startActivity(i);
+    }
 }

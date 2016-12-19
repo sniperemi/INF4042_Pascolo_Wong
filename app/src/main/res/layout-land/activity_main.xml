@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
-    <!--
-    <Button
-        android:onClick="onDownload"
-        android:text="@string/DL_JSON"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_welcome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/Download" />
-    -->
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,6 +44,8 @@
         android:layout_alignStart="@+id/hexa_from_color" />
 
     <Button
+        android:onClick="launchHexaFromRGB"
+
         android:text="@string/HexaFromRGB"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -71,6 +60,8 @@
         />
 
     <Button
+        android:onClick="launchRGBFromHexa"
+
         android:text="@string/RGBFromHexa"
         android:layout_width="250dp"
         android:layout_height="wrap_content"

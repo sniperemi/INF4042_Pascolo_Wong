@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_hexa_from_rgb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="org.esiea.pascolo_wong.programmationmobile.activity_hexa_from_rgb">
+
+    <TextView
+        android:text="R :"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/redText"
+        android:textSize="24sp"
+        android:layout_alignBaseline="@+id/redCode"
+        android:layout_alignBottom="@+id/redCode"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="24dp"
+        android:id="@+id/redCode"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/redText"
+        android:layout_width="100dp" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:text="G :"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/greenText"
+        android:textSize="24sp"
+        android:layout_below="@+id/redText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/greenCode"
+        android:layout_width="100dp"
+        android:layout_alignBaseline="@+id/greenText"
+        android:layout_alignBottom="@+id/greenText"
+        android:layout_toRightOf="@+id/redText"
+        android:layout_toEndOf="@+id/redText" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:text="B :"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/blueText"
+        android:textSize="24sp"
+        android:layout_below="@+id/greenText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/blueCode"
+        android:layout_width="100dp"
+        android:layout_alignBaseline="@+id/blueText"
+        android:layout_alignBottom="@+id/blueText"
+        android:layout_toRightOf="@+id/blueText"
+        android:layout_toEndOf="@+id/blueText" />
+
+    <Button
+        android:onClick="Process"
+        android:text="@string/apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/blueCode"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/processButtonHexa" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hexaCode"
+        android:textSize="18sp"
+        android:layout_above="@+id/blueText"
+        android:layout_toRightOf="@+id/greenCode"
+        android:layout_toEndOf="@+id/greenCode"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp" />
+
+</RelativeLayout>
