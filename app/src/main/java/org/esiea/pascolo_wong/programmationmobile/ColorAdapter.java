@@ -11,6 +11,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,6 +60,7 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorHolder>
         }
 
         holder.name.setText(itemName);
+        holder.hexaCode.setText(itemHexa);
         holder.itemView.setBackgroundColor(Color.parseColor(itemHexa));
     }
 
@@ -70,11 +72,18 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorHolder>
     class ColorHolder extends RecyclerView.ViewHolder
     {
         private TextView name;
+        private TextView hexaCode;
 
         public ColorHolder(View itemView) {
             super(itemView);
             name = (TextView)itemView.findViewById(R.id.rv_color_element_name);
+            hexaCode = (TextView)itemView.findViewById(R.id.rv_color_element_hexa);
         }
 
+    }
+
+    public void showHexa()
+    {
+        //Toast.makeText(this,getHexa(), Toast.LENGTH_LONG).show();
     }
 }

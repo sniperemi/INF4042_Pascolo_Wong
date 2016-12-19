@@ -9,6 +9,9 @@
     <string name="downloading">Downloading...</string>
     <string name="downloadFinished">Download Finished</string>
 
+    <string name="emptyDB">Empty Database</string>
+    <string name="emptyDBmsg">You need to download colors to continue</string>
+
     <string name="SelectColor">Colors from Database</string>
     <string name="ColorFromPicture">Take a picture</string>
 

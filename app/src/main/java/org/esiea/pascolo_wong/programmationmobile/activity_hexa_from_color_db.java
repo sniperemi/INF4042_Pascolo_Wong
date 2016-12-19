@@ -1,5 +1,6 @@
 package org.esiea.pascolo_wong.programmationmobile;
 
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +10,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
@@ -18,6 +20,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -33,17 +36,35 @@ public class activity_hexa_from_color_db extends AppCompatActivity
     private RecyclerView rv;
     private ColorAdapter adapter;
     public static final String COLORS_UPDATE = "org.esiea.pascolo_wong.programmationmobile.COLORS_UPDATE";
+
     public class ColorsUpdate extends BroadcastReceiver
     {
         @Override
         public void onReceive(Context context, Intent intent)
         {
-            //Log.d("FinishedDL", getIntent().getAction());
+            downloadFinishedNotification();
+            onDownloadFinished();
         }
     }
 
+    private void downloadFinishedNotification ()
+    {
+        NotificationCompat.Builder notifBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.downloadfinished)
+                .setContentTitle(getString(R.string.colorPack))
+                .setContentText(getString(R.string.downloadFinished));
+        NotificationManager notifMnger = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notifMnger.notify(0, notifBuilder.build());
+    }
+
+    public void onDownloadFinished ()
+    {
+        Toast.makeText(getApplicationContext(),getString(R.string.downloadFinished), Toast.LENGTH_SHORT).show();
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hexa_from_color_db);
 
@@ -111,8 +132,8 @@ public class activity_hexa_from_color_db extends AppCompatActivity
 
     private void emptyDatabaseDialog(){
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        alertDialog.setTitle("Empty Database");
-        alertDialog.setMessage("You need to download colors to continue");
+        alertDialog.setTitle(R.string.emptyDB);
+        alertDialog.setMessage(getString(R.string.emptyDBmsg));
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

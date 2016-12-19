@@ -10,6 +10,9 @@
     <string name="downloading">Téléchargement en cours...</string>
     <string name="downloadFinished">Téléchargement terminé</string>
 
+    <string name="emptyDB">Base de données inexistante</string>
+    <string name="emptyDBmsg">Vous devez télécharger des couleurs pour continuer</string>
+
     <string name="SelectColor">Couleurs de la Base de Données</string>
     <string name="ColorFromPicture">Prendre une Photo</string>
 

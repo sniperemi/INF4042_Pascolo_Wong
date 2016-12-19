@@ -42,13 +42,12 @@ public class DownloadService extends IntentService {
         }
     }
 
-    private void getColors() {
-        Log.i("Download", "Downloading...");
+    private void getColors()
+    {
         URL url = null;
         try
         {
             url = new URL("https://gist.githubusercontent.com/jjdelc/1868136/raw/c9160b1e60bd8c10c03dbd1a61b704a8e977c46b/crayola.json");
-            //url = new URL("http://binouze.fabrigli.fr/bieres.json");
             HttpURLConnection connexion = (HttpURLConnection) url.openConnection();
             connexion.setRequestMethod("GET");
             connexion.connect();
@@ -56,8 +55,6 @@ public class DownloadService extends IntentService {
             {
                 LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(activity_hexa_from_color_db.COLORS_UPDATE));
                 copyInputStreamToFile(connexion.getInputStream(), new File(getCacheDir(), "advancedColorPack1.json"));
-                downloadFinishedNotification();
-                Log.d("Download", "Colors downloaded");
             }
         }
         catch (MalformedURLException e)
@@ -68,16 +65,6 @@ public class DownloadService extends IntentService {
         {
             e.printStackTrace();
         }
-    }
-
-    private void downloadFinishedNotification ()
-    {
-        NotificationCompat.Builder notifBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.downloadfinished)
-                .setContentTitle(getString(R.string.colorPack))
-                .setContentText(getString(R.string.downloadFinished));
-        NotificationManager notifMnger = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notifMnger.notify(0, notifBuilder.build());
     }
 
     private void copyInputStreamToFile(InputStream input, File file)
