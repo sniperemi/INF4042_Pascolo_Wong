@@ -30,39 +30,22 @@
         android:id="@+id/hexa_from_color" />
 
     <Button
-        android:text="@string/RGBFromColor"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/hexa_from_color"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/rgb_from_color" />
-
-    <Button
         android:onClick="launchColorFromHexa"
 
         android:text="@string/ColorFromHexa"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rgb_from_color"
+        android:layout_below="@+id/hexa_from_color"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:id="@+id/color_from_hexa" />
 
-    <Button
-        android:text="@string/ColorFromRGB"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/color_from_hexa"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/color_from_rgb" />
 
     <Button
         android:text="@string/HexaFromRGB"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/color_from_rgb"
+        android:layout_below="@+id/color_from_hexa"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:id="@+id/hexa_from_rgb" />
