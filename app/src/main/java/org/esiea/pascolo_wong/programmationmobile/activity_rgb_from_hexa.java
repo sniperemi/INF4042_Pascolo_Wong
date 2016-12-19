@@ -54,7 +54,7 @@ public class activity_rgb_from_hexa extends AppCompatActivity
         EditText editText = (EditText) findViewById(R.id.hexaCode);
         String hexaCode = editText.getText().toString();
         TextView rgb = (TextView) findViewById(R.id.RGBValues);
-        if (!hexaCode.matches("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"))
+        if (!hexaCode.matches("^#([A-Fa-f0-9]{6})$"))
         {
             Toast.makeText(getApplicationContext(),getString(R.string.enterValidHexa), Toast.LENGTH_SHORT).show();
         }
