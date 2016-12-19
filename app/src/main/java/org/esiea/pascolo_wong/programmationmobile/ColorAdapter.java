@@ -29,7 +29,7 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorHolder>
     @Override
     public ColorHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View v = inflater.inflate(R.layout.rv_color_element_hexa, parent, false);
+        View v = inflater.inflate(R.layout.rv_color_element, parent, false);
 
         ColorHolder colorH = new ColorHolder(v);
         return colorH;
