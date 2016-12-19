@@ -28,7 +28,8 @@
             android:name=".DownloadService"
             android:exported="false" />
 
-        <activity android:name=".activity_hexa_from_color_db"></activity>
+        <activity android:name=".activity_hexa_from_color_db" />
+        <activity android:name=".activity_color_from_hexa"></activity>
     </application>
 
 </manifest>

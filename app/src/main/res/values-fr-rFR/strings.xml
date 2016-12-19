@@ -18,7 +18,11 @@
 
     <string name="HexaFromColor">Hexa depuis une couleur</string>
     <string name="RGBFromColor">RGB depuis une couleur</string>
+
     <string name="ColorFromHexa">Couleur depuis Hexa</string>
+    <string name="enterValidHexa">Veuillez rentrer un code valide</string>
+    <string name="apply">Appliquer</string>
+
     <string name="ColorFromRGB">Couleur depuis RGB</string>
     <string name="HexaFromRGB">Hexa depuis RGB</string>
     <string name="RGBFromHexa">RGB depuis Hexa</string>

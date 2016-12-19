@@ -1,21 +1,15 @@
 package org.esiea.pascolo_wong.programmationmobile;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * Created by Rémi on 18/12/2016.
@@ -35,7 +29,7 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorHolder>
     @Override
     public ColorHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View v = inflater.inflate(R.layout.rv_color_element, parent, false);
+        View v = inflater.inflate(R.layout.rv_color_element_hexa, parent, false);
 
         ColorHolder colorH = new ColorHolder(v);
         return colorH;
@@ -61,6 +55,7 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorHolder>
 
         holder.name.setText(itemName);
         holder.hexaCode.setText(itemHexa);
+        //holder.rgbCode.setText(itemRGB);
         holder.itemView.setBackgroundColor(Color.parseColor(itemHexa));
     }
 
@@ -73,17 +68,16 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorHolder>
     {
         private TextView name;
         private TextView hexaCode;
+        //private TextView rgbCode;
 
         public ColorHolder(View itemView) {
             super(itemView);
             name = (TextView)itemView.findViewById(R.id.rv_color_element_name);
             hexaCode = (TextView)itemView.findViewById(R.id.rv_color_element_hexa);
+            //rgbCode = (TextView)itemView.findViewById(R.id.rv_color_element_rgb);
         }
 
     }
 
-    public void showHexa()
-    {
-        //Toast.makeText(this,getHexa(), Toast.LENGTH_LONG).show();
-    }
+
 }

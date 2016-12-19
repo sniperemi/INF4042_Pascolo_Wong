@@ -39,6 +39,8 @@
         android:id="@+id/rgb_from_color" />
 
     <Button
+        android:onClick="launchColorFromHexa"
+
         android:text="@string/ColorFromHexa"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
