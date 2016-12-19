@@ -15,7 +15,7 @@ public class help_download extends AppCompatActivity {
 
     public void Return(View v)
     {
-        Intent i = new Intent(this, activity_color_from_hexa.class);
+        Intent i = new Intent(this, activity_download.class);
         startActivity(i);
     }
 }

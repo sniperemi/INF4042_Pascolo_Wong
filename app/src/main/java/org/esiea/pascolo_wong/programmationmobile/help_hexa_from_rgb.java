@@ -15,7 +15,7 @@ public class help_hexa_from_rgb extends AppCompatActivity {
 
     public void Return(View v)
     {
-        Intent i = new Intent(this, activity_color_from_hexa.class);
+        Intent i = new Intent(this, activity_hexa_from_rgb.class);
         startActivity(i);
     }
 }
