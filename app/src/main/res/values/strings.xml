@@ -29,5 +29,13 @@
     <string name="RGBFromHexa">RGB from Hexa</string>
 
     <string name="Help">Help</string>
+    <string name="helpDownload">Click on the pack you want to download in order to launch the download.\nYou must have access to internet.</string>
+    <string name="helpColorFromHexa">Enter a hexadecimal code respecting the syntax :\n#ffffff or #FFFFFF.</string>
+    <string name="helpHexaFromColor">You can choose between viewing the colors database or shooting a photo.\nYou must have some colors in your database.</string>
+    <string name="helpHexaFromColorDB">You can see here all the colors in your database.</string>
+    <string name="helpHexaFromRGB">You must enter each color value respecting the syntax : 123.\nr = red, g = green, b = blue.\nYou must write zeros if your rgb value contains some.</string>
+    <string name="helpRGBFromHexa">Enter a hexadecimal code respecting the syntax :\n#ffffff or #FFFFFF.\nrgb values will be printed in the corresponding color.</string>
+    <string name="helpMain">Select an option.\nYou can have the color from number values (hexadecimal or rgb) or make conversions.</string>
+
     <string name="Home">Home</string>
 </resources>

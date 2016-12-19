@@ -28,5 +28,13 @@
     <string name="RGBFromHexa">RGB depuis Hexa</string>
 
     <string name="Help">Aide</string>
+    <string name="helpDownload">Sélectionnez le pack que vous souhaitez télécharger pour lancer le téléchargement.\nVous devez avoir un accès à internet.</string>
+    <string name="helpColorFromHexa">Entrez le code héxadécimal respectant la syntaxe :\n#ffffff or #FFFFFF.</string>
+    <string name="helpHexaFromColor">Vous pouvez choisir entre les couleurs de la base de données et prendre une photo.\nVous devez avoir des couleurs dans votre base de données.</string>
+    <string name="helpHexaFromColorDB">Vous pouvez voir les couleurs présentes dans votre base de données.</string>
+    <string name="helpHexaFromRGB">Vous devez rentrer chacune des valeurs en respectant la syntaxe : 123.\nr = rouge, g = vert, b = bleu.\nSi votre valeur contient des zéros, vous devez les écrire.</string>
+    <string name="helpRGBFromHexa">Entrez le code héxadécimal respectant la syntaxe :\n#ffffff or #FFFFFF.\nLes valeurs rgb seront affichées dans la couleur correspondante.</string>
+    <string name="helpMain">Sélectionnez une option.\nVous pouvez obtenir une couleur depuis des valeurs décimales ou héxadécimales ou faire des conversions.</string>
+
     <string name="Home">Debut</string>
 </resources>

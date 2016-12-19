@@ -31,7 +31,8 @@ public class activity_download extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_help:
-                // User chose the "Settings" item, show the app settings UI...
+                Intent iHelp = new Intent(this, help_download.class);
+                startActivity(iHelp);
                 return true;
 
             case R.id.action_home:

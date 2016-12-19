@@ -31,7 +31,14 @@
         <activity android:name=".activity_hexa_from_color_db" />
         <activity android:name=".activity_color_from_hexa" />
         <activity android:name=".activity_hexa_from_rgb" />
-        <activity android:name=".activity_rgb_from_hexa"></activity>
+        <activity android:name=".activity_rgb_from_hexa" />
+        <activity android:name=".help_main" />
+        <activity android:name=".help_hexa_from_color" />
+        <activity android:name=".help_hexa_from_color_db" />
+        <activity android:name=".help_hexa_from_rgb" />
+        <activity android:name=".help_rgb_from_hexa" />
+        <activity android:name=".help_download" />
+        <activity android:name=".help_color_from_hexa"></activity>
     </application>
 
 </manifest>

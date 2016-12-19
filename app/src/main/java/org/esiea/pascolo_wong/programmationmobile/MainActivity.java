@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     {
         switch (item.getItemId()) {
             case R.id.action_help:
-                // User chose the "Settings" item, show the app settings UI...
+                Intent iHelp = new Intent(this, help_main.class);
+                startActivity(iHelp);
                 return true;
 
             case R.id.action_home:

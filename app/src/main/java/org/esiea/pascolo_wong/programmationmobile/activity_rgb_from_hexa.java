@@ -32,7 +32,8 @@ public class activity_rgb_from_hexa extends AppCompatActivity
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_help:
-                // User chose the "Settings" item, show the app settings UI...
+                Intent iHelp = new Intent(this, help_rgb_from_hexa.class);
+                startActivity(iHelp);
                 return true;
 
             case R.id.action_home:
@@ -65,14 +66,6 @@ public class activity_rgb_from_hexa extends AppCompatActivity
 
 
     }
-    /*private String hexaToRGB(String hexaString)
-    {
-        int color = (int)Long.parseLong(hexaString, 16);
-        int r = (color >> 16) & 0xFF;
-        int g = (color >> 8) & 0xFF;
-        int b = (color >> 0) & 0xFF;
-        return ("(" + String.valueOf(r)+ ", " + String.valueOf(g) + ", " + String.valueOf(b) + ")");
-    }*/
 
     public String hexaToRGB(String hexaString) {
                 int red = Integer.valueOf( hexaString.substring( 1, 3 ), 16 );

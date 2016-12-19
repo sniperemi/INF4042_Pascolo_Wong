@@ -6,7 +6,7 @@
 
     <item android:id="@+id/action_help"
         android:title="@string/Help"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
 
     <item android:id="@+id/action_home"
         android:title="@string/Home"
