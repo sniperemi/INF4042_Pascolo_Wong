@@ -54,8 +54,6 @@ public class activity_hexa_from_color_db extends AppCompatActivity
         adapter = new ColorAdapter(this, getColorsFromFile());
         rv.setAdapter(adapter);
 
-        //rv.setLayoutManager(new LinearLayoutManager(this.getApplicationContext(), LinearLayoutManager.VERTICAL, false));
-
         IntentFilter intentFilter = new IntentFilter(COLORS_UPDATE);
         LocalBroadcastManager.getInstance(this).registerReceiver(new ColorsUpdate(), intentFilter);
     }

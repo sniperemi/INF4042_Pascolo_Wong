@@ -2,9 +2,12 @@ package org.esiea.pascolo_wong.programmationmobile;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -34,25 +37,29 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorHolder>
         View v = inflater.inflate(R.layout.rv_color_element, parent, false);
 
         ColorHolder colorH = new ColorHolder(v);
-        Log.i("Holder", "Holder créé");
         return colorH;
     }
 
     @Override
     public void onBindViewHolder(ColorHolder holder, int position) {
 
-        String item = null;
+        String itemName = null;
+        String itemHexa = null;
+        String itemRGB = null;
+
         try
         {
-            item = colors.getJSONObject(position).getString("name");
-            Log.i("JSON", item);
+            itemName = colors.getJSONObject(position).getString("name");
+            itemHexa = colors.getJSONObject(position).getString("hex");
+            itemRGB = colors.getJSONObject(position).getString("rgb");
         }
         catch (JSONException e)
         {
             e.printStackTrace();
         }
 
-        holder.name.setText(item);
+        holder.name.setText(itemName);
+        holder.itemView.setBackgroundColor(Color.parseColor(itemHexa));
     }
 
     @Override
@@ -63,12 +70,10 @@ public class ColorAdapter extends RecyclerView.Adapter<ColorAdapter.ColorHolder>
     class ColorHolder extends RecyclerView.ViewHolder
     {
         private TextView name;
-        private View container;
 
         public ColorHolder(View itemView) {
             super(itemView);
             name = (TextView)itemView.findViewById(R.id.rv_color_element_name);
-            container = itemView.findViewById(R.id.itemContainer);
         }
 
     }
