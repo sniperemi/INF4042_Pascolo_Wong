@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item)
     {
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.action_help:
                 // User chose the "Settings" item, show the app settings UI...
                 return true;
 

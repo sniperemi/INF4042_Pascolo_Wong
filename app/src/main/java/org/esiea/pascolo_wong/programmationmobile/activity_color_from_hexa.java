@@ -31,7 +31,7 @@ public class activity_color_from_hexa extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.action_help:
                 // User chose the "Settings" item, show the app settings UI...
                 return true;
 
